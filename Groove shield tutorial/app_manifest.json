@@ -1,0 +1,19 @@
+{
+  "SchemaVersion": 1,
+  "Name" : "Groove_shield_tutorial",
+  "ComponentId" : "e3b0bd35-9946-4d88-bb7c-b1ffa7439964",
+  "EntryPoint": "/bin/app",
+  "CmdArgs": [],
+  "Capabilities": {
+    "AllowedConnections": [],
+    "AllowedTcpServerPorts": [],
+    "AllowedUdpServerPorts": [],
+    "Gpio": [],
+    "Uart": [],
+    "I2cMaster": [],
+    "SpiMaster": [],
+    "WifiConfig": false,
+    "NetworkConfig": false,
+    "SystemTime": false
+  }
+}
