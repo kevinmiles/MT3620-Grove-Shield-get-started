@@ -52,7 +52,7 @@
   <ItemDefinitionGroup>
     <ClCompile>
       <AdditionalOptions>-Werror=implicit-function-declaration %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">C:\Users\vivanwin\Documents\Visual Studio 2017\Projects\Groove shield tutorial\MT3620_Grove_Shield\MT3620_Grove_Shield_Library;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">$(SolutionDir)\MT3620_Grove_Shield\MT3620_Grove_Shield_Library;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <LibraryDependencies>applibs;pthread;gcc_s;c</LibraryDependencies>
