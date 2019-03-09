@@ -21,14 +21,11 @@
     <ClInclude Include="applibs_versions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="$code_boardheader$">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <UpToDateCheckInput Include="app_manifest.json" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Icon.ico">
-      <Filter>Resource Files</Filter>
-    </Image>
+    <ClInclude Include="mt3620_rdb.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

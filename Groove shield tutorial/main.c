@@ -11,6 +11,9 @@
 
 #include "mt3620_rdb.h"
 
+#include "Grove.h"
+#include "Sensors/GroveTempHumiSHT31.h"
+
 // This C application for the MT3620 Reference Development Board (Azure Sphere)
 // outputs a string every second to Visual Studio's Device Output window
 //
@@ -35,6 +38,10 @@ int main(int argc, char *argv[])
 {
     Log_Debug("Application starting.\n");
 
+	int i2cFd;
+	GroveShield_Initialize(&i2cFd, 115200);
+	void* sht31 = GroveTempHumiSHT31_Open(i2cFd);
+
     // Register a SIGTERM handler for termination requests
     struct sigaction action;
     memset(&action, 0, sizeof(struct sigaction));
@@ -46,6 +53,11 @@ int main(int argc, char *argv[])
     while (!terminationRequired) {
         Log_Debug("Hello world!\n");
         nanosleep(&sleepTime, NULL);
+		GroveTempHumiSHT31_Read(sht31);
+		float temp = GroveTempHumiSHT31_GetTemperature(sht31);
+		float humi = GroveTempHumiSHT31_GetHumidity(sht31);
+		Log_Debug("Temperature: %.1fC\n", temp);
+		Log_Debug("Humidity: %.1f\%c\n", humi, 0x25);
     }
 
     Log_Debug("Application exiting.\n");
